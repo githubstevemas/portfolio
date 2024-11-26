@@ -5,7 +5,95 @@
 {% block content %}
 
 <div>
-    <span>Salut c'est cool!</span>
+    {% if portfolio_data %}
+
+    <span class="name">
+        {{ portfolio_data.profil.nom }}
+        {{ portfolio_data.profil.prenom }}
+    </span>
+
+    <span class="titre">
+        {{ portfolio_data.profil.titre }}
+    </span>
+
+    <span class="description">
+        {{ portfolio_data.profil.description }}
+    </span>
+
+    <span class="competences">
+        <ul>
+            {% for competence in portfolio_data.competences %}
+                <li>{{ competence }}</li>
+            {% endfor %}
+        </ul>
+    </span>
+
+    <span class="projets">
+        <ul>
+            {% for projet in portfolio_data.projets %}
+                <li>
+                    {{ projet.nom }}
+                    {{ projet.description }}
+                </li>
+            {% endfor %}
+        </ul>
+    </span>
+
+    <span class="formations">
+        <ul>
+            {% for formation in portfolio_data.formations %}
+                <li>
+                    {{ formation.nom }}
+                    {{ formation.debut }}
+                    {{ formation.fin }}
+                    {{ formation.ecole }}
+                </li>
+            {% endfor %}
+        </ul>
+    </span>
+
+    <span class="experiences">
+        <ul>
+            {% for experience in portfolio_data.experiences %}
+                <li>
+                    {{ experience.poste }}
+                    {{ experience.entreprise }}
+                    {{ experience.debut }}
+                    {{ experience.fin }}
+                    {{ experience.responsabilites }}
+                </li>
+            {% endfor %}
+        </ul>
+    </span>
+
+    <span class="soft-skills">
+        <ul>
+            {% for skill in portfolio_data.softskills %}
+                <li>
+                    {{ skill }}
+                </li>
+            {% endfor %}
+        </ul>
+    </span>
+
+    <span class="interets">
+        <ul>
+            {% for interet in portfolio_data.interets %}
+                <li>
+                    {{ interet }}
+                </li>
+            {% endfor %}
+        </ul>
+    </span>
+
+    <span class="contact">
+        {{ portfolio_data.contact.telephone }}
+        {{ portfolio_data.contact.email }}
+        {{ portfolio_data.contact.linkedin }}
+        {{ portfolio_data.contact.github }}
+    </span>
+
+    {% endif %}
 </div>
 
 {% endblock content %}
