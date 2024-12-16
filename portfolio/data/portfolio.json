@@ -3,39 +3,13 @@
     "nom": "Mas",
     "prenom": "Steve",
     "titre": "Inénieur IA",
-    "description": "Après plus de douze ans dans la grande distribution, où j'ai eu le plaisir de manager des équipes et de répondre aux attentes de mes clients, je suis prêt à relever un nouveau défi en revenant à ma première passion : l'informatique.\nRécemment diplômé en tant que Développeur Python, je suis motivé à combiner mon esprit d'équipe, goût pour le challenge et une grande rigueur afin d'exceller dans le domaine de l'intelligence artificielle."
+    "description": "Après plus de douze ans dans la grande distribution, où j'ai eu le plaisir de manager des équipes et de répondre aux attentes de mes clients, je suis prêt à relever un nouveau défi en revenant à ma première passion : l'informatique. Récemment diplômé en tant que Développeur Python, je suis motivé à combiner mon esprit d'équipe, goût pour le challenge et une grande rigueur afin d'exceller dans le domaine de l'intelligence artificielle."
   },
   "competences": [
     "Python",
     "Flask",
     "Django",
     "SQL"
-  ],
-  "projets": [
-    {
-      "nom": "Succession Moods",
-      "description": "Exploitation du NLP pour analyser les dialogues de la série Succession, avec visualisation et comparaison des émotions via Pandas et Plotly.",
-      "technologies": [],
-      "lien": "https://github.com/"
-    },
-    {
-      "nom": "Orange County Lettings",
-      "description": "Projet Django pour la gestion locative, suivi d'erreurs Sentry, tests automatisés, CI/CD (GitHub Actions), et déploiement Docker.",
-      "technologies": [],
-      "lien": "https://github.com/"
-    },
-    {
-      "nom": "PyScraper",
-      "description": "ETL Python pour l'analyse de marché..",
-      "technologies": [],
-      "lien": "https://github.com/"
-    },
-    {
-      "nom": "CRM - Event Manager",
-      "description": "Application Python pour CRM et gestion d'événements, avec SQLAlchemy, authentification sécurisée, rôles, et CRUD. Fournit une architecture back-end fiable et sécurisée.",
-      "technologies": [],
-      "lien": "https://github.com/"
-    }
   ],
   "formations": [
     {
@@ -63,42 +37,78 @@
       "entreprise": "Centrakor, Balma (31)",
       "debut": "2022",
       "fin": "2023",
-      "responsabilites": "Gestion, encadrement et optimisation de la performance commerciale."
+      "responsabilites": "Gestion, encadrement et optimisation de la performance commerciale.",
+      "competences": [
+        "management",
+        "travail équipe",
+        "gestion commerciale",
+        "achats"
+      ]
     },
     {
       "poste": "RESPONSABLE ADJOINT DE MAGASIN",
       "entreprise": "Gamm Vert, Garidech (31)",
       "debut": "2021",
       "fin": "2022",
-      "responsabilites": "Gestion du magasin, encadrement et veille à l’atteinte des objectifs."
+      "responsabilites": "Gestion du magasin, encadrement et veille à l’atteinte des objectifs.",
+      "competences": [
+        "management",
+        "travail équipe",
+        "gestion commerciale",
+        "achats"
+      ]
     },
     {
       "poste": "RESPONSABLE SECTEUR MAGASIN",
       "entreprise": "Chronodrive, Ramonville (31)",
       "debut": "2015",
       "fin": "2021",
-      "responsabilites": "Achats fournisseurs, fidélisation client, encadrement de 30 collaborateurs."
+      "responsabilites": "Achats fournisseurs, fidélisation client, encadrement de 30 collaborateurs.",
+      "competences": [
+        "management",
+        "travail équipe",
+        "gestion commerciale",
+        "achats"
+      ]
     },
     {
       "poste": "RESPONSABLE POINT DE VENTE",
       "entreprise": "Elior, Aéroport Blagnac (31)",
       "debut": "2009",
       "fin": "2015",
-      "responsabilites": "Gestion d'une boulangerie Paul, management, stocks et satisfaction client."
+      "responsabilites": "Gestion d'une boulangerie Paul, management, stocks et satisfaction client.",
+      "competences": [
+        "management",
+        "travail équipe",
+        "gestion commerciale",
+        "achats"
+      ]
     },
     {
       "poste": "STEWARD",
       "entreprise": "TUI, Rungis (94)",
       "debut": "2007",
       "fin": "2009",
-      "responsabilites": "Vols long-courriers, sécurité à bord, service, ventes."
+      "responsabilites": "Vols long-courriers, sécurité à bord, service, ventes.",
+      "competences": [
+        "management",
+        "travail équipe",
+        "gestion commerciale",
+        "achats"
+      ]
     },
     {
       "poste": "ADMINISTRATEUR RESEAU",
       "entreprise": "Sogeti, Toulouse (31)",
       "debut": "2007",
       "fin": "2009",
-      "responsabilites": "Administrateur data, création et gestion de comptes utilisateurs."
+      "responsabilites": "Administrateur data, création et gestion de comptes utilisateurs.",
+      "competences": [
+        "management",
+        "travail équipe",
+        "gestion commerciale",
+        "achats"
+      ]
     }
   ],
   "softskills": ["Autonomie", "Curiosité", "Créativité", "Esprit d'équipe"],
