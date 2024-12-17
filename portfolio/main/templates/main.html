@@ -7,35 +7,61 @@
 <div class="main-container">
     {% if portfolio_data %}
 
-        <div class="name">
-            {{ portfolio_data.profil.nom }}
-            {{ portfolio_data.profil.prenom }}
-        </div>
+        <div class="hero-container">
+            <div class="name">
+                {{ portfolio_data.profil.nom }}
+                {{ portfolio_data.profil.prenom }}
+            </div>
 
-        <div class="titre">
-            {{ portfolio_data.profil.titre }}
-        </div>
+            <div class="titre">
+                Je suis {{ portfolio_data.profil.titre }}
+            </div>
 
-        <div class="description">
-            {{ portfolio_data.profil.description }}
-        </div>
-
-        <div class="competences">
-            <div class="title-h2">COMPETENCES</div>
-            <div>
-                {% for competence in portfolio_data.competences %}
-                    <span class="competence-name">{{ competence }}<br></span>
-                {% endfor %}
+            <div class="intro">
+                {{ portfolio_data.profil.intro }}
             </div>
         </div>
+
+        <i class="fa-solid fa-arrow-down-long" style="font-size: 24px;"></i>
+
+        <div class="about-container">
+
+            <div class="cv-photo">
+                <img src="../static/images/cv_photo.jpg" alt="cv photo">
+            </div>
+
+            <div class="about-info">
+                <div class="about-title">
+                    <div class="title-h3">A propos de moi</div>
+                    <div>
+                        <a class="button" href="">CV <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="description">
+                    {{ portfolio_data.profil.description | safe }}
+                </div>
+
+                <div class="competences-container">
+                    {% for competence in portfolio_data.competences %}
+                        <div class="competence">
+                            <div class="competence-name">{{ competence.nom }}</div>
+                            <div class="competence-stars">{{ competence.etoiles }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
 
         <div class="projets">
                 {% for repo in repos %}
                     {% if repo.description %}
                         <div class="repo-container">
                             <div>
-                                <i class="fa-solid fa-folder-open" style="color: #0366d6;"></i>
-                                <a class="repo-title" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+                                <a class="repo-title" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
                             </div>
                             <p>{{ repo.description }}</p>
                             <p class="repo-updated">Updeated on {{ repo.updated_at|date:"M Y" }}</p>
@@ -63,38 +89,11 @@
             <div class="title-h2">FORMATIONS</div>
         </div>
 
-        <div class="experiences-container">
-            {% for experience in portfolio_data.experiences %}
-                <div class="experience">
-                    <div class="experience-title">{{ experience.poste }}</div>
-                    <div class="repo-updated">
-                        {{ experience.entreprise }} - {{ experience.debut }} à {{ experience.fin }}
-                    </div>
-                    <p>{{ experience.responsabilites }}</p>
-                    <!-- Affichage des topics de compétences -->
-                    {% for topic in experience.competences %}
-                        <div class="topic">{{ topic }}</div>
-                    {% endfor %}
-                </div>
-            {% endfor %}
-        </div>
-
-
         <span class="soft-skills">
             <ul>
                 {% for skill in portfolio_data.softskills %}
                     <li>
                         {{ skill }}
-                    </li>
-                {% endfor %}
-            </ul>
-        </span>
-
-        <span class="interets">
-            <ul>
-                {% for interet in portfolio_data.interets %}
-                    <li>
-                        {{ interet }}
                     </li>
                 {% endfor %}
             </ul>

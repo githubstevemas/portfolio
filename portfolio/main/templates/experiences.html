@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main-container">
+    {% if portfolio_data %}
+
+        <div class="experiences-container">
+            {% for experience in portfolio_data.experiences %}
+                <div class="experience">
+                    <div class="experience-title">{{ experience.poste }}</div>
+                    <div class="repo-updated">
+                        {{ experience.entreprise }} - {{ experience.debut }} à {{ experience.fin }}
+                    </div>
+                    <p>{{ experience.responsabilites }}</p>
+                    <!-- Affichage des topics de compétences -->
+                    {% for topic in experience.competences %}
+                        <div class="topic">{{ topic }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <span class="interets">
+            <ul>
+                {% for interet in portfolio_data.interets %}
+                    <li>
+                        {{ interet }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </span>
+
+    {% endif %}
+</div>
+
+{% endblock content %}
+
+{% block extra_js %}
+<script>
+
+</script>
+{% endblock %}

@@ -3,14 +3,19 @@
     "nom": "Mas",
     "prenom": "Steve",
     "titre": "Inénieur IA",
-    "description": "Après plus de douze ans dans la grande distribution, où j'ai eu le plaisir de manager des équipes et de répondre aux attentes de mes clients, je suis prêt à relever un nouveau défi en revenant à ma première passion : l'informatique. Récemment diplômé en tant que Développeur Python, je suis motivé à combiner mon esprit d'équipe, goût pour le challenge et une grande rigueur afin d'exceller dans le domaine de l'intelligence artificielle."
+    "intro": "Je mets ma crétivité au service de solutions innovantes",
+    "description": "Après plus de douze ans dans la grande distribution, où j'ai eu le plaisir de manager des équipes et de répondre aux attentes de mes clients, je suis prêt à relever un nouveau défi en revenant à ma première passion : l'informatique.<br>Récemment diplômé en tant que Développeur Python, je suis motivé à combiner mon esprit d'équipe, goût pour le challenge et une grande rigueur afin d'exceller dans le domaine de l'intelligence artificielle."
   },
   "competences": [
-    "Python",
-    "Flask",
-    "Django",
-    "SQL"
-  ],
+    { "nom": "Python", "etoiles": 5 },
+    { "nom": "Flask", "etoiles": 4 },
+    { "nom": "Django", "etoiles": 4 },
+    { "nom": "SQL", "etoiles": 5 },
+    { "nom": "Docker", "etoiles": 4 },
+    { "nom": "ETL", "etoiles": 3 },
+    { "nom": "JavaScript", "etoiles": 3 }
+  ]
+,
   "formations": [
     {
       "nom": "Développeur Python",
