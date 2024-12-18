@@ -20,11 +20,14 @@
             <div class="intro">
                 {{ portfolio_data.profil.intro }}
             </div>
+
+            <div class="down-arrow">
+                <i class="fa-solid fa-arrow-down-long" style="font-size: 24px;"></i>
+            </div>
+
         </div>
 
-        <i class="fa-solid fa-arrow-down-long" style="font-size: 24px;"></i>
-
-        <div class="about-container">
+        <div id="about">
 
             <div class="cv-photo">
                 <img src="../static/images/cv_photo.jpg" alt="cv photo">
@@ -54,7 +57,9 @@
 
 
 
-        <div class="projets">
+        <div id="projets">
+
+            <div id="projets-grid">
                 {% for repo in repos %}
                     {% if repo.description %}
                         <div class="repo-container">
@@ -64,17 +69,23 @@
                                 </a>
                             </div>
                             <p>{{ repo.description }}</p>
-                            <p class="repo-updated">Updeated on {{ repo.updated_at|date:"M Y" }}</p>
+                            <p class="repo-updated">Updated on {{ repo.updated_at|date:"M Y" }}</p>
                             {% for topic in repo.topics %}
                                 <span class="topic">{{ topic }}</span>
                             {% endfor %}
                         </div>
                     {% endif %}
                 {% endfor %}
+            </div>
+
+            <div class="nav-buttons">
+                <button id="prev-btn" class="nav-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button id="next-btn" class="nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
         </div>
 
-        <div class="formations-container">
-            <div class="formations">
+        <div id="formations">
+            <div class="formation-container">
                 {% for formation in portfolio_data.formations %}
                     <div class="formation">
                         <div class="formation-name">{{ formation.nom }}</div>
@@ -99,7 +110,7 @@
             </ul>
         </span>
 
-        <span class="contact">
+        <span id="contact">
             {{ portfolio_data.contact.telephone }}
             {{ portfolio_data.contact.email }}
             {{ portfolio_data.contact.linkedin }}
@@ -110,9 +121,3 @@
 </div>
 
 {% endblock content %}
-
-{% block extra_js %}
-<script>
-
-</script>
-{% endblock %}
