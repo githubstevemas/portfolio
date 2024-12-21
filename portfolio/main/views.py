@@ -33,4 +33,5 @@ def main(request):
 
     return render(request, 'main.html',
                   {'portfolio_data': portfolio_data,
+                   'range_five': list(range(5)),
                    'repos': repos})

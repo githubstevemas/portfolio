@@ -37,7 +37,7 @@
                 <div class="about-title">
                     <div class="title-h3">A propos de moi</div>
                     <div>
-                        <a class="button" href="">CV <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a class="cv-button" href="">CV <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="description">
@@ -48,14 +48,18 @@
                     {% for competence in portfolio_data.competences %}
                         <div class="competence">
                             <div class="competence-name">{{ competence.nom }}</div>
-                            <div class="competence-stars">{{ competence.etoiles }}</div>
+                            <div class="competence-stars">
+                                {% for i in range_five %}
+                                    {% if i < competence.etoiles %}
+                                        <i class="fa fa-star full-star"></i>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
-
-
 
         <div id="projets">
 
@@ -63,22 +67,30 @@
                 {% for repo in repos %}
                     {% if repo.description %}
                         <div class="repo-container">
-                            <div>
-                                <a class="repo-title" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}
+
+                            <div class="repo-title">
+
+                                <a href="{{ repo.html_url }}" target="_blank">
+                                    {{ repo.name }}
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
+
                             </div>
+
                             <p>{{ repo.description }}</p>
+
                             <p class="repo-updated">Updated on {{ repo.updated_at|date:"M Y" }}</p>
+
                             {% for topic in repo.topics %}
                                 <span class="topic">{{ topic }}</span>
                             {% endfor %}
+
                         </div>
                     {% endif %}
                 {% endfor %}
             </div>
 
-            <div class="nav-buttons">
+            <div class="nav-container">
                 <button id="prev-btn" class="nav-btn"><i class="fa-solid fa-arrow-left"></i></button>
                 <button id="next-btn" class="nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
@@ -100,7 +112,7 @@
             <div class="title-h2">FORMATIONS</div>
         </div>
 
-        <span class="soft-skills">
+        <div class="soft-skills">
             <ul>
                 {% for skill in portfolio_data.softskills %}
                     <li>
@@ -108,14 +120,43 @@
                     </li>
                 {% endfor %}
             </ul>
-        </span>
+        </div>
 
-        <span id="contact">
-            {{ portfolio_data.contact.telephone }}
-            {{ portfolio_data.contact.email }}
-            {{ portfolio_data.contact.linkedin }}
-            {{ portfolio_data.contact.github }}
-        </span>
+        <div id="contact">
+
+            <div>
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="contact-data">
+                    {{ portfolio_data.contact.telephone }}
+                </span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <span class="contact-data">
+                    {{ portfolio_data.contact.email }}
+                </span>
+            </div>
+
+            <div>
+                <a href="{{ portfolio_data.contact.linkedin }}" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span class="contact-data">
+                        {{ portfolio_data.contact.linkedin }}
+                    </span>
+                </a>
+            </div>
+
+            <div>
+                <a href="{{ portfolio_data.contact.github }}" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="contact-data">
+                        {{ portfolio_data.contact.github }}
+                    </span>
+                </a>
+            </div>
+
+        </div>
 
     {% endif %}
 </div>

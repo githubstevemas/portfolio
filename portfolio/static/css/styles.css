@@ -7,7 +7,8 @@ html {
 }
 
 body {
-    background-color: #F7F7F7;
+    color: #d3dbe3;
+    background-color: #10131c;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +18,12 @@ body {
 
 a {
     text-decoration: none;
+    color: #d3dbe3;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #58a6ff;
 }
 
 .button {
@@ -38,7 +45,8 @@ a {
 }
 
 .title-h3 {
-    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
 }
 
 header {
@@ -52,8 +60,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    border: 1px solid #0366d6;
+    background-color: rgba(16, 19, 28, 0.7);
     border-radius: 50px;
     z-index: 1000;
 }
@@ -118,6 +125,19 @@ header {
     flex-direction: column;
 }
 
+.cv-button {
+    color: #10131c;
+    background-color: #f1f8ff;
+    background-color: #f1f8ff;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 20px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .description {
     width: 500px;
     font-family: 'Fira Code', monospace;
@@ -135,14 +155,19 @@ header {
 .competences-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 30px;
 }
 
 .competence-name {
     font-size: 15px;
-    color: #0366d6;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
+    margin-bottom: 5px;
+}
+
+.competence-stars{
+    font-size: 13px;
+    margin-bottom: 13px;
 }
 
 #projets {
@@ -164,7 +189,7 @@ header {
 .repo-container {
     font-family: 'Fira Code', monospace;
     font-size: 12px;
-    border: 1px solid #0366d6;
+    border: 1px solid #3b444e;
     border-radius: 15px;
     padding: 15px;
     break-inside: avoid;
@@ -174,13 +199,13 @@ header {
 
 .repo-title {
     font-size: 13px;
-    color: #0366d6;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
+    gap: 20px;
 }
 
-.repo-title:hover {
-    color: #0000d6;
+.fa-arrow-up-right-from-square {
+    margin-left: 15px;
 }
 
 .repo-updated {
@@ -190,23 +215,15 @@ header {
 .topic {
     display: inline-block;
     padding: 5px 10px;
-    font-size: 11px;
-    color: #0366d6;
+    font-size: 12px;
+    color: #10131c;
     background-color: #f1f8ff;
-    border: 1px solid #0366d6;
     border-radius: 15px;
     text-align: center;
     margin: 3px;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.topic:hover {
-    background-color: #030006;
-    color: #fff;
-}
-
-.nav-buttons {
+.nav-container {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -214,8 +231,8 @@ header {
 }
 
 .nav-btn {
-    background-color: #0366d6;
-    color: white;
+    color: #10131c;
+    background-color: #f1f8ff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -223,11 +240,11 @@ header {
 }
 
 .nav-btn:hover {
-    background-color: #ffff22;
+    background-color: #58a6ff;
 }
 
 .nav-btn:disabled {
-    background-color: #ccc;
+    background-color: #aaa;
     cursor: not-allowed;
 }
 
@@ -282,5 +299,12 @@ header {
 }
 
 #contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+    gap: 10px;
+}
 
+.contact-data {
+    margin-left: 13px;
 }
