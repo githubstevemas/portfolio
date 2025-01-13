@@ -8,13 +8,17 @@
     {% if portfolio_data %}
 
         <div class="hero-container">
-            <div class="name">
-                {{ portfolio_data.profil.nom }}
-                {{ portfolio_data.profil.prenom }}
+
+            <div class="name-container">
+                Je suis
+                <div class="name">
+                    {{ portfolio_data.profil.prenom }}
+                    {{ portfolio_data.profil.nom }}
+                </div>
             </div>
 
             <div class="titre">
-                Je suis {{ portfolio_data.profil.titre }}
+                {{ portfolio_data.profil.titre }}
             </div>
 
             <div class="intro">
@@ -27,38 +31,40 @@
 
         </div>
 
-        <div id="about">
+        <div >
 
-            <div class="cv-photo">
-                <img src="../static/images/cv_photo.jpg" alt="cv photo">
-            </div>
+            <div id="about">
+                <div class="cv-photo">
+                    <img src="../static/images/cv_photo.jpg" alt="cv photo">
+                </div>
 
-            <div class="about-info">
-                <div class="about-title">
-                    <div class="title-h3">A propos de moi</div>
-                    <div>
-                        <a class="cv-button" href="">CV <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="about-info">
+
+                    <div class="about-title">
+                        <div class="title-h2">A PROPOS DE MOI</div>
+                        <a href="{% static 'data/CV_STEVE_MAS.pdf' %}" class="cv-button">CV<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-                </div>
-                <div class="description">
-                    {{ portfolio_data.profil.description | safe }}
-                </div>
 
-                <div class="competences-container">
-                    {% for competence in portfolio_data.competences %}
-                        <div class="competence">
-                            <div class="competence-name">{{ competence.nom }}</div>
-                            <div class="competence-stars">
-                                {% for i in range_five %}
-                                    {% if i < competence.etoiles %}
-                                        <i class="fa fa-star full-star"></i>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endfor %}
+                    <div class="description">
+                        {{ portfolio_data.profil.description | safe }}
+                    </div>
+
                 </div>
             </div>
+
+            <div class="skills-container">
+                <div class="title-h2">POINTS FORTS</div>
+                <div class="soft-skills">
+                    <ul>
+                        {% for skill in portfolio_data.softskills %}
+                            <li>
+                                <div class="skill-name"><i class="fa-solid fa-plus"></i> {{ skill|upper }}</div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
         <div id="projets">
@@ -102,9 +108,7 @@
                     <div class="formation">
                         <div class="formation-name">{{ formation.nom }}</div>
                         <div>
-                            {{ formation.debut }}
-                            {{ formation.fin }}
-                            {{ formation.ecole }}<br>
+                            {{ formation.debut }} / {{ formation.fin }} - {{ formation.ecole }}<br>
                         </div>
                     </div>
                 {% endfor %}
@@ -112,14 +116,25 @@
             <div class="title-h2">FORMATIONS</div>
         </div>
 
-        <div class="soft-skills">
-            <ul>
-                {% for skill in portfolio_data.softskills %}
-                    <li>
-                        {{ skill }}
-                    </li>
+        <div id="competences">
+
+            <div class="title-h2">COMPETENCES</div>
+
+            <div class="competences-container">
+                {% for competence in portfolio_data.competences %}
+                <div class="competence">
+                    <div class="competence-name">{{ competence.nom }}</div>
+                    <div class="competence-stars">
+                        {% for i in range_five %}
+                            {% if i < competence.etoiles %}
+                                <i class="fa fa-star full-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
+
         </div>
 
         <div id="contact">
