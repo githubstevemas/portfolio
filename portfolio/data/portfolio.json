@@ -4,7 +4,7 @@
     "prenom": "Steve",
     "titre": "Développeur IA",
     "intro": "Je mets ma créativité au service de solutions innovantes.",
-    "description": "Après plus de douze ans dans la grande distribution, où j'ai eu le plaisir de manager des équipes et de répondre aux attentes de mes clients, je suis prêt à relever un nouveau défi en revenant à ma première passion : l'informatique.<br>Récemment diplômé en tant que Développeur Python, je suis motivé à combiner mon esprit d'équipe, goût pour le challenge et une grande rigueur afin d'exceller dans le domaine de l'intelligence artificielle."
+    "description": "Après plus de douze ans dans la grande distribution, où j'ai eu le plaisir de manager des équipes et de répondre aux attentes de mes clients, je suis prêt à relever un nouveau défi en revenant à ma première passion : l'informatique.<br><br> Récemment diplômé en tant que Développeur Python, je suis motivé à combiner mon <span class='strong-word'>autonomie</span>, mon <span class='strong-word'>esprit d'équipe</span> et ma <span class='strong-word'>rigueur</span> pour relever de nouveaux défis. Grâce à ma <span class='strong-word'>curiosité</span> et ma <span class='strong-word'>créativité</span>, je suis convaincu de pouvoir exceller dans le domaine de l'intelligence artificielle."
   },
   "competences": [
     { "nom": "Python", "etoiles": 5 },
@@ -124,9 +124,8 @@
     "Course à pieds."
   ],
     "contact": {
-      "telephone": "+33 6 33 23 72 35",
       "email": "mas.ste@gmail.com",
-      "linkedin": "linkedin.com/in/steve-mas",
-      "github": "github.com/githubstevemas"
+      "linkedin": "http://www.linkedin.com/in/steve-mas",
+      "github": "http://www.github.com/githubstevemas"
     }
   }

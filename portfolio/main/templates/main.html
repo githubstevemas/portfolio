@@ -10,7 +10,7 @@
         <div class="hero-container">
 
             <div class="name-container">
-                Je suis
+                <i class="fa-solid fa-hand"></i> Je suis
                 <div class="name">
                     {{ portfolio_data.profil.prenom }}
                     {{ portfolio_data.profil.nom }}
@@ -18,7 +18,7 @@
             </div>
 
             <div class="titre">
-                {{ portfolio_data.profil.titre }}
+                {{ portfolio_data.profil.titre }} <span class="blink">|</span>
             </div>
 
             <div class="intro">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="down-arrow">
-                <i class="fa-solid fa-arrow-down-long" style="font-size: 24px;"></i>
+                <a href="#about"><i class="fa-solid fa-arrow-down-long" style="font-size: 24px;"></i></a>
             </div>
 
         </div>
@@ -35,7 +35,7 @@
 
             <div id="about">
                 <div class="cv-photo">
-                    <img src="../static/images/cv_photo.jpg" alt="cv photo">
+                    <img src="../static/images/mee.png" alt="cv photo">
                 </div>
 
                 <div class="about-info">
@@ -52,22 +52,18 @@
                 </div>
             </div>
 
-            <div class="skills-container">
-                <div class="title-h2">POINTS FORTS</div>
-                <div class="soft-skills">
-                    <ul>
-                        {% for skill in portfolio_data.softskills %}
-                            <li>
-                                <div class="skill-name"><i class="fa-solid fa-plus"></i> {{ skill|upper }}</div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-
         </div>
 
         <div id="projets">
+
+            <div class="projet-title">
+                <div class="title-h2">PROJETS</div>
+
+                <div class="nav-container">
+                    <button id="prev-btn" class="nav-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button id="next-btn" class="nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
 
             <div id="projets-grid">
                 {% for repo in repos %}
@@ -83,7 +79,7 @@
 
                             </div>
 
-                            <p>{{ repo.description }}</p>
+                            <p>{{ repo.description|truncatechars:150 }}</p>
 
                             <p class="repo-updated">Updated on {{ repo.updated_at|date:"M Y" }}</p>
 
@@ -96,29 +92,9 @@
                 {% endfor %}
             </div>
 
-            <div class="nav-container">
-                <button id="prev-btn" class="nav-btn"><i class="fa-solid fa-arrow-left"></i></button>
-                <button id="next-btn" class="nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <div id="formations">
-            <div class="formation-container">
-                {% for formation in portfolio_data.formations %}
-                    <div class="formation">
-                        <div class="formation-name">{{ formation.nom }}</div>
-                        <div>
-                            {{ formation.debut }} / {{ formation.fin }} - {{ formation.ecole }}<br>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="title-h2">FORMATIONS</div>
         </div>
 
         <div id="competences">
-
-            <div class="title-h2">COMPETENCES</div>
 
             <div class="competences-container">
                 {% for competence in portfolio_data.competences %}
@@ -135,39 +111,44 @@
                 {% endfor %}
             </div>
 
+            <div class="title-h2">COMPETENCES</div>
+
+        </div>
+
+        <div id="formations">
+
+            <div class="title-h2">FORMATIONS</div>
+
+            <div class="formation-container">
+                {% for formation in portfolio_data.formations %}
+                    <div class="formation">
+                        <div class="formation-name">{{ formation.nom }}</div>
+                        <div>
+                            {{ formation.debut }} / {{ formation.fin }} - {{ formation.ecole }}<br>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
         </div>
 
         <div id="contact">
 
             <div>
-                <i class="fa-brands fa-whatsapp"></i>
-                <span class="contact-data">
-                    {{ portfolio_data.contact.telephone }}
-                </span>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-envelope"></i>
-                <span class="contact-data">
-                    {{ portfolio_data.contact.email }}
-                </span>
+                <a href="mailto:{{ portfolio_data.contact.email }}">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </div>
 
             <div>
                 <a href="{{ portfolio_data.contact.linkedin }}" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
-                    <span class="contact-data">
-                        {{ portfolio_data.contact.linkedin }}
-                    </span>
                 </a>
             </div>
 
             <div>
                 <a href="{{ portfolio_data.contact.github }}" target="_blank">
                     <i class="fa-brands fa-github"></i>
-                    <span class="contact-data">
-                        {{ portfolio_data.contact.github }}
-                    </span>
                 </a>
             </div>
 
