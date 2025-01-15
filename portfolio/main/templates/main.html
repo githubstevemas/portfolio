@@ -35,7 +35,7 @@
 
             <div id="about">
                 <div class="cv-photo">
-                    <img src="../static/images/mee.png" alt="cv photo">
+                    <img src="../static/images/me.png" alt="cv photo">
                 </div>
 
                 <div class="about-info">
@@ -94,24 +94,39 @@
 
         </div>
 
-        <div id="competences">
+        <div id="main-competences">
 
-            <div class="competences-container">
-                {% for competence in portfolio_data.competences %}
-                <div class="competence">
-                    <div class="competence-name">{{ competence.nom }}</div>
-                    <div class="competence-stars">
-                        {% for i in range_five %}
-                            {% if i < competence.etoiles %}
-                                <i class="fa fa-star full-star"></i>
-                            {% endif %}
+            <div class="competences">
+                <div class="competences-container">
+                    <span class="title-h3">Languages and Frameworks</span>
+                    <div class="techs-container">
+                        {% for language in portfolio_data.languages %}
+                            {{ language | safe }}
                         {% endfor %}
                     </div>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="competences-container">
+                    <span class="title-h3">Tools</span>
+                    <div class="softs-container">
+                        {% for logiciel in portfolio_data.logiciels %}
+                            {{ logiciel | safe }}
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="competences-container">
+                    <span class="title-h3">Methodologies and Standards</span>
+                    <div class="autres-container">
+                        {% for autre in portfolio_data.autres_skills %}
+                            {{ autre }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
             </div>
 
-            <div class="title-h2">COMPETENCES</div>
+            <div class="title-h2">SKILLS</div>
 
         </div>
 
@@ -154,6 +169,9 @@
 
         </div>
 
+        <div class="up-arrow">
+            <a href="#about"><i class="fa-solid fa-arrow-up-long" style="font-size: 24px;"></i></a>
+        </div>
     {% endif %}
 </div>
 
