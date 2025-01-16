@@ -12,7 +12,9 @@ load_dotenv()
 
 def main(request):
 
-    file_path = os.path.join(settings.BASE_DIR, 'data', 'portfolio.json')
+    lang = request.GET.get('lang', 'en')
+    file_path = os.path.join(settings.BASE_DIR, 'data', f'portfolio_{lang}.json')
+
     with open(file_path, 'r', encoding='utf-8') as file:
         portfolio_data = json.load(file)
 

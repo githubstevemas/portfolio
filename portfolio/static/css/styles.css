@@ -32,8 +32,11 @@ ul {
 
 svg {
     fill: #d3dbe3;
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
+    padding: 9px;
+    border: 1px solid #3b444e;
+    border-radius: 6px;
 }
 
 @keyframes move {
@@ -177,6 +180,19 @@ header {
     gap: 50px;
 }
 
+.language-switch {
+    font-family: 'Inter', sans-serif;
+    position: fixed;
+    left: 90%;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    gap: 8px;
+    padding: 12px;
+}
+
 .main-container {
     flex: 1;
     display: flex;
@@ -282,22 +298,15 @@ header {
     display: flex;
     flex-direction: column;
     width: 300px;
-    border: 1px solid #3b444e;
-    border-radius: 15px;
     padding: 20px;
     gap: 30px;
-}
-
-.competences:hover {
-    background-color: #10131c;
-    box-shadow: 4px 4px 12px rgba(59, 68, 78, 0.3);
 }
 
 .techs-container,
 .softs-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
     margin-top: 20px;
 }
 
