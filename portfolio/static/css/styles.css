@@ -30,15 +30,6 @@ ul {
     list-style: none;
 }
 
-svg {
-    fill: #d3dbe3;
-    width: 28px;
-    height: 28px;
-    padding: 9px;
-    border: 1px solid #3b444e;
-    border-radius: 6px;
-}
-
 @keyframes move {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
@@ -201,7 +192,7 @@ header {
     margin-top: 180px;
     padding-left: 200px;
     padding-right: 200px;
-    gap: 200px;
+    gap: 240px;
 }
 
 .hero-container {
@@ -249,7 +240,6 @@ header {
 .up-arrow {
     display: flex;
     justify-content: center;
-    margin-bottom: 70px;
 }
 
 #about {
@@ -294,37 +284,6 @@ header {
     border-radius: 15px;
 }
 
-.competences {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    padding: 20px;
-    gap: 30px;
-}
-
-.techs-container,
-.softs-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-
-#main-competences {
-    display: flex;
-    align-items: center;
-    gap: 70px;
-    margin-right: 70px;
-    padding-top: 150px;
-    margin-bottom: 100px;
-}
-
-.autres-container {
-    margin-top: 20px;
-    font-family: 'Fira Code', monospace;
-    font-size: 14px;
-}
-
 #projets {
     display: flex;
     flex-direction: column;
@@ -335,7 +294,13 @@ header {
 
 .projet-title {
     display: flex;
-    width: 100%;
+    width: 95%;
+}
+
+.projects_intro {
+    width: 95%;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
 }
 
 #projets-grid {
@@ -417,12 +382,67 @@ header {
     cursor: not-allowed;
 }
 
+.main-competences {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    gap: 30px;
+}
+
+.skills-intro {
+    margin-top: 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+}
+
+.techs-container,
+.softs-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-icon {
+    fill: #d3dbe3;
+    width: 28px;
+    height: 28px;
+    padding: 9px;
+    border: 1px solid #3b444e;
+    border-radius: 6px;
+}
+
+#competences {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-right: 70px;
+}
+
+.autres-container {
+    margin-top: 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+}
+
 #formations {
     display: flex;
     align-items: center;
     gap: 70px;
     margin-right: 70px;
-    padding-top: 150px;
+}
+
+.formation-title {
+    text-align: right;
+}
+
+
+.formation-intro,
+.contact-intro {
+    margin-top: 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
 }
 
 .formation-container {
@@ -444,21 +464,32 @@ header {
     font-family: 'Inter', sans-serif;
 }
 
-.soft-skills {
-
-}
-
-.interets {
-
-}
-
-#contact {
+.contacts {
     display: flex;
     font-size: 30px;
-    margin-bottom: 300px;
     gap: 30px;
+    align-items: center;
+    margin-top: 30px;
 }
 
-.contact-data {
-    margin-left: 13px;
+.contact-icon {
+    color: #10131c;
+    background-color: #f1f8ff;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 12px;
+}
+
+.footer-line {
+    font-family: 'Fira Code', monospace;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-icon {
+    fill: #d3dbe3;
+    width: 16px;
+    height: 16px;
 }

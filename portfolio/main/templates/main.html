@@ -10,7 +10,7 @@
         <div class="hero-container">
 
             <div class="name-container">
-                <i class="fa-solid fa-hand"></i> Je suis
+                {{ portfolio_data.profil.hi }}
                 <div class="name">
                     {{ portfolio_data.profil.prenom }}
                     {{ portfolio_data.profil.nom }}
@@ -41,7 +41,7 @@
                 <div class="about-info">
 
                     <div class="about-title">
-                        <div class="title-h2">A PROPOS DE MOI</div>
+                        <div class="title-h2">{{ portfolio_data.profil.about }}</div>
                         <a href="{% static 'data/CV_STEVE_MAS.pdf' %}" class="cv-button">CV<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
 
@@ -57,13 +57,15 @@
         <div id="projets">
 
             <div class="projet-title">
-                <div class="title-h2">PROJETS</div>
+                <div class="title-h2">{{ portfolio_data.projects_title }}</div>
 
                 <div class="nav-container">
                     <button id="prev-btn" class="nav-btn"><i class="fa-solid fa-arrow-left"></i></button>
                     <button id="next-btn" class="nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
+
+            <div class="projects_intro">{{ portfolio_data.projects_intro }}</div>
 
             <div id="projets-grid">
                 {% for repo in repos %}
@@ -94,9 +96,9 @@
 
         </div>
 
-        <div id="main-competences">
+        <div id="competences">
 
-            <div class="competences">
+            <div class="main-competences">
                 <div class="competences-container">
                     <span class="title-h3">Languages and Frameworks</span>
                     <div class="techs-container">
@@ -126,13 +128,19 @@
 
             </div>
 
-            <div class="title-h2">SKILLS</div>
+            <div>
+                <div class="title-h2">{{ portfolio_data.skills_title }}</div>
+                <div class="skills-intro">{{ portfolio_data.skills_intro }}</div>
+            </div>
 
         </div>
 
         <div id="formations">
 
-            <div class="title-h2">FORMATIONS</div>
+            <div class="formation-title">
+                <div class="title-h2">{{ portfolio_data.formation_title }}</div>
+                <div class="formation-intro">{{ portfolio_data.formation_intro }}</div>
+            </div>
 
             <div class="formation-container">
                 {% for formation in portfolio_data.formations %}
@@ -148,30 +156,39 @@
         </div>
 
         <div id="contact">
+            <div class="contact-title">
+                <div class="title-h2">CONTACT</div>
+                <div class="contact-intro">{{ portfolio_data.contact_intro }}</div>
+            </div>
+            <div class="contacts">
 
-            <div>
-                <a href="mailto:{{ portfolio_data.contact.email }}">
+                <a class="contact-icon" href="mailto:{{ portfolio_data.contact.email }}">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
-            </div>
 
-            <div>
-                <a href="{{ portfolio_data.contact.linkedin }}" target="_blank">
+                <a class="contact-icon" href="{{ portfolio_data.contact.linkedin }}" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
-            </div>
 
-            <div>
-                <a href="{{ portfolio_data.contact.github }}" target="_blank">
+                <a class="contact-icon" href="{{ portfolio_data.contact.github }}" target="_blank">
                     <i class="fa-brands fa-github"></i>
                 </a>
-            </div>
 
+            </div>
         </div>
 
         <div class="up-arrow">
             <a href="#about"><i class="fa-solid fa-arrow-up-long" style="font-size: 24px;"></i></a>
         </div>
+
+        <div class="footer">
+            {% for line in portfolio_data.footer %}
+                <div class="footer-line">
+                    {{ line | safe }}
+                </div>
+            {% endfor %}
+        </div>
+
     {% endif %}
 </div>
 
