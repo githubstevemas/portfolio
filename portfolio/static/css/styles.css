@@ -125,7 +125,7 @@ ul {
 
 .button-menu {
     font-family: 'Fira Code', monospace;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .title-h2 {
@@ -140,6 +140,7 @@ ul {
 .title-h3 {
     font-family: 'Fira Code', monospace;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .strong-word {
@@ -200,9 +201,14 @@ header {
     margin-bottom: 4%;
 }
 
+.hi-word {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+}
+
 .name {
     font-family: 'Fira Code', monospace;
-    font-size: 22px;
+    font-size: 34px;
     margin-top: 5px;
     margin-bottom: 30px;
 }
@@ -357,7 +363,7 @@ header {
 .nav-container {
     display: flex;
     justify-content: center;
-    margin-left: 60px;
+    margin-left: auto;
     gap: 20px;
 }
 
@@ -368,7 +374,6 @@ header {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    height: auto;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -385,9 +390,13 @@ header {
 .main-competences {
     display: flex;
     flex-direction: column;
+    text-align: right;
     width: 300px;
-    padding: 20px;
     gap: 30px;
+}
+
+.competences-container {
+    margin-bottom: 20px;
 }
 
 .skills-intro {
@@ -404,6 +413,11 @@ header {
     margin-top: 20px;
 }
 
+.skill-icon-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .skill-icon {
     fill: #d3dbe3;
     width: 28px;
@@ -417,7 +431,6 @@ header {
     display: flex;
     align-items: center;
     gap: 70px;
-    margin-right: 70px;
 }
 
 .autres-container {
@@ -430,13 +443,11 @@ header {
     display: flex;
     align-items: center;
     gap: 70px;
-    margin-right: 70px;
 }
 
 .formation-title {
     text-align: right;
 }
-
 
 .formation-intro,
 .contact-intro {
@@ -453,7 +464,6 @@ header {
     text-align: left;
     border: 1px solid #3b444e;
     border-radius: 15px;
-    margin-bottom: 30px;
     padding: 20px;
     gap: 20px;
 }

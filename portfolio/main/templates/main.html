@@ -10,10 +10,10 @@
         <div class="hero-container">
 
             <div class="name-container">
-                {{ portfolio_data.profil.hi }}
+                <span class="hi-word">{{ portfolio_data.profil.hi }}</span>
                 <div class="name">
                     {{ portfolio_data.profil.prenom }}
-                    {{ portfolio_data.profil.nom }}
+                    {{ portfolio_data.profil.nom }},
                 </div>
             </div>
 
@@ -99,26 +99,25 @@
         <div id="competences">
 
             <div class="main-competences">
+
                 <div class="competences-container">
-                    <span class="title-h3">Languages and Frameworks</span>
+                    <span class="title-h3">{{ portfolio_data.languages_title }}</span>
                     <div class="techs-container">
                         {% for language in portfolio_data.languages %}
                             {{ language | safe }}
                         {% endfor %}
                     </div>
                 </div>
-                <div class="horizontal-line"></div>
                 <div class="competences-container">
-                    <span class="title-h3">Tools</span>
+                    <span class="title-h3">{{ portfolio_data.logiciels_title }}</span>
                     <div class="softs-container">
                         {% for logiciel in portfolio_data.logiciels %}
                             {{ logiciel | safe }}
                         {% endfor %}
                     </div>
                 </div>
-                <div class="horizontal-line"></div>
                 <div class="competences-container">
-                    <span class="title-h3">Methodologies and Standards</span>
+                    <span class="title-h3">{{ portfolio_data.autres_skills_title }}</span>
                     <div class="autres-container">
                         {% for autre in portfolio_data.autres_skills %}
                             {{ autre }}{% if not forloop.last %}, {% endif %}
