@@ -33,6 +33,8 @@ def main(request):
         repo['updated_at'] = datetime.strptime(repo['updated_at'],
                                                "%Y-%m-%dT%H:%M:%SZ")
 
+    repos = sorted(repos, key=lambda repo: repo['updated_at'], reverse=True)
+
     return render(request, 'main.html',
                   {'portfolio_data': portfolio_data,
                    'range_five': list(range(5)),
